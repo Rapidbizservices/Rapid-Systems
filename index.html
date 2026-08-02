@@ -4,68 +4,356 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rapid Business Systems | International Industrial Sourcing</title>
+<meta name="description" content="RB-Systems connects U.S. customers with qualified Indian manufacturing suppliers — sourcing, procurement, and vendor management for industrial components.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial,sans-serif;max-width:1000px;margin:0 auto;padding:40px;line-height:1.6;color:#333}
-header{background:#0b3d5c;color:white;padding:40px;border-radius:8px}
-h1{margin:0}
-.section{margin-top:30px}
-.card{background:#f5f7fa;padding:20px;border-radius:8px}
+  :root{
+    --navy:#0b3d5c;
+    --navy-dark:#082a40;
+    --accent:#2f7fbf;
+    --accent-light:#eaf3fb;
+    --text:#28313c;
+    --text-muted:#5a6673;
+    --border:#e3e8ee;
+    --bg-card:#f6f8fb;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family:'Inter',Arial,sans-serif;
+    margin:0;
+    color:var(--text);
+    background:#ffffff;
+    line-height:1.65;
+  }
+  a{color:var(--accent)}
+
+  /* Top bar with small PMS link */
+  .topbar{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding:8px 24px;
+    background:var(--navy-dark);
+  }
+  .topbar a{
+    color:#cfe3f2;
+    font-size:0.78rem;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    padding:4px 10px;
+    border-radius:20px;
+    transition:background 0.2s, color 0.2s;
+  }
+  .topbar a:hover{
+    background:rgba(255,255,255,0.12);
+    color:#ffffff;
+  }
+  .topbar a svg{width:11px;height:11px}
+
+  header{
+    background:linear-gradient(135deg, var(--navy) 0%, #1a5a86 60%, var(--accent) 100%);
+    color:white;
+  }
+  .nav{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 24px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand img{
+    height:34px;
+    width:auto;
+    border-radius:6px;
+    background:rgba(255,255,255,0.9);
+    padding:3px 6px;
+  }
+  .brand-name{
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+  }
+  .hero{
+    max-width:1100px;
+    margin:0 auto;
+    padding:56px 24px 64px;
+    text-align:left;
+  }
+  header h1{
+    margin:0 0 14px;
+    font-size:2.4rem;
+    font-weight:800;
+    letter-spacing:-0.5px;
+  }
+  header p.tagline{
+    margin:0;
+    font-size:1.15rem;
+    font-weight:400;
+    color:#dfeefb;
+    max-width:640px;
+  }
+
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .section{
+    margin-top:56px;
+  }
+  .section h2{
+    font-size:1.5rem;
+    font-weight:700;
+    margin-bottom:14px;
+    color:var(--navy);
+  }
+  .section p{
+    color:var(--text-muted);
+    font-size:1.02rem;
+  }
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    padding:28px 30px;
+    border-radius:var(--radius);
+  }
+
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:16px;
+    margin-top:6px;
+  }
+  .service-item{
+    background:#ffffff;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px 20px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    transition:box-shadow 0.2s, transform 0.2s;
+  }
+  .service-item:hover{
+    box-shadow:0 6px 20px rgba(11,61,92,0.1);
+    transform:translateY(-2px);
+  }
+  .service-icon{
+    flex:0 0 auto;
+    width:34px;
+    height:34px;
+    border-radius:8px;
+    background:var(--accent-light);
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .service-icon svg{
+    width:18px;
+    height:18px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .service-item span{
+    font-size:0.96rem;
+    color:var(--text);
+  }
+
+  .focus-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+  }
+  .focus-tags span{
+    background:var(--accent-light);
+    color:var(--navy);
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:0.9rem;
+    font-weight:500;
+  }
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:22px;
+  }
+  .contact-item h3{
+    margin:0 0 6px;
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    color:var(--accent);
+  }
+  .contact-item p{
+    margin:0;
+    color:var(--text);
+    font-size:1rem;
+  }
+  .contact-item a{
+    text-decoration:none;
+    font-weight:600;
+  }
+  .contact-item a:hover{
+    text-decoration:underline;
+  }
+
+  footer{
+    margin-top:64px;
+    padding:28px 24px;
+    border-top:1px solid var(--border);
+    text-align:center;
+    color:var(--text-muted);
+    font-size:0.85rem;
+  }
+  footer a{
+    color:var(--text-muted);
+    text-decoration:underline;
+  }
+
+  @media (max-width:600px){
+    header h1{font-size:1.8rem}
+    .hero{padding:40px 20px 48px}
+    .section{margin-top:40px}
+    .card{padding:22px 20px}
+  }
 </style>
 </head>
 <body>
+
+<div class="topbar">
+  <a href="https://master.d2syuhnqcx2xgd.amplifyapp.com" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    Product Management System
+  </a>
+</div>
+
 <header>
-<h1>Rapid Business Systems</h1>
-<p>Connecting U.S. Customers with Qualified Indian Manufacturing Suppliers</p>
+  <div class="nav">
+    <div class="brand">
+      <img src="logo.svg" alt="RB-Systems logo">
+    </div>
+  </div>
+  <div class="hero">
+    <h1>Rapid Business Systems</h1>
+    <p class="tagline">Connecting U.S. Customers with Qualified Indian Manufacturing Suppliers</p>
+  </div>
 </header>
 
-<div class="section">
-<h2>Who We Are</h2>
-<p>RB-Systems operates as an international sourcing and procurement company serving customers in the United States. We work as a commercial intermediary between U.S. buyers and Indian manufacturers, helping customers identify, evaluate, and procure industrial components and engineered products from India.</p>
-</div>
+<main>
 
-<div class="section card">
-<h2>What We Do</h2>
-<ul>
-<li>Source mechanical components from qualified Indian suppliers.</li>
-<li>Facilitate procurement of castings, forgings, and machined parts.</li>
-<li>Coordinate supplier communication, quotations, and sample evaluation.</li>
-<li>Assist with vendor selection and production sourcing.</li>
-<li>Support quality, logistics, and commercial coordination between buyers and suppliers.</li>
-<li>Serve as a local point of contact for sourcing activities in India.</li>
-</ul>
-</div>
+  <div class="section">
+    <h2>Who We Are</h2>
+    <p>RB-Systems operates as an international sourcing and procurement company serving customers in the United States. We work as a commercial intermediary between U.S. buyers and Indian manufacturers, helping customers identify, evaluate, and procure industrial components and engineered products from India.</p>
+  </div>
 
-<div class="section">
-<h2>Why India?</h2>
-<p>India offers a strong ecosystem of engineering, manufacturing, machining, foundry, and industrial suppliers. RB-Systems helps U.S. customers access these capabilities efficiently while reducing the complexity of dealing with multiple suppliers across different regions.</p>
-</div>
+  <div class="section">
+    <h2>What We Do</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <span>Source mechanical components from qualified Indian suppliers</span>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 22 8 12 14 2 8"/><polyline points="2 12 12 18 22 12"/><polyline points="2 16 12 22 22 16"/></svg>
+        </div>
+        <span>Facilitate procurement of castings, forgings, and machined parts</span>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4V4z"/></svg>
+        </div>
+        <span>Coordinate supplier communication, quotations, and sample evaluation</span>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8 12 11 15 16 9"/></svg>
+        </div>
+        <span>Assist with vendor selection and production sourcing</span>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="7" width="13" height="9"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+        </div>
+        <span>Support quality, logistics, and commercial coordination between buyers and suppliers</span>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <span>Serve as a local point of contact for sourcing activities in India</span>
+      </div>
+    </div>
+  </div>
 
-<div class="section card">
-<h2>Pune Operations</h2>
-<p>RB-Systems is establishing a small operational presence in Pune to support supplier interactions, receive samples and prototype parts, manage business correspondence, and coordinate sourcing activities with manufacturing partners.</p>
-</div>
+  <div class="section">
+    <h2>Why India?</h2>
+    <div class="card">
+      <p style="margin:0">India offers a strong ecosystem of engineering, manufacturing, machining, foundry, and industrial suppliers. RB-Systems helps U.S. customers access these capabilities efficiently while reducing the complexity of dealing with multiple suppliers across different regions.</p>
+    </div>
+  </div>
 
-<div class="section">
-<h2>Focus Areas</h2>
-<p>Mechanical Parts • Precision Machining • Castings • Industrial Components • Supplier Development • International Procurement • Vendor Management</p>
-</div>
-<div class="section card">    
-  <h2>Contact Us</h2>     
-  <p>        
-    <strong>Email:</strong>        
-    <a href="mailto:info@rapid-systems.net">info@rapid-systems.net</a>    
-  </p>     
-  <p>        
-    <strong>Phone:</strong>        
-    248-231-7064    
-  </p>    
-  <p>        
-    <strong>Address:</strong><br>       
-    400 Spectrum Center Drive<br>        
-    Irvine, CA 92618<br>       
-    United States    
-  </p> 
-</div> 
+  <div class="section">
+    <h2>Pune Operations</h2>
+    <p>RB-Systems is establishing a small operational presence in Pune to support supplier interactions, receive samples and prototype parts, manage business correspondence, and coordinate sourcing activities with manufacturing partners.</p>
+  </div>
 
-</body> 
+  <div class="section">
+    <h2>Focus Areas</h2>
+    <div class="focus-tags">
+      <span>Mechanical Parts</span>
+      <span>Precision Machining</span>
+      <span>Castings</span>
+      <span>Industrial Components</span>
+      <span>Supplier Development</span>
+      <span>International Procurement</span>
+      <span>Vendor Management</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Contact Us</h2>
+    <div class="card contact-grid">
+      <div class="contact-item">
+        <h3>Email</h3>
+        <p><a href="mailto:info@rapid-systems.net">info@rapid-systems.net</a></p>
+      </div>
+      <div class="contact-item">
+        <h3>Phone</h3>
+        <p>248-231-7064</p>
+      </div>
+      <div class="contact-item">
+        <h3>Address</h3>
+        <p>400 Spectrum Center Drive<br>Irvine, CA 92618<br>United States</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 Rapid Business Systems. All rights reserved.
+</footer>
+
+</body>
 </html>
