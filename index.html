@@ -31,31 +31,6 @@
   }
   a{color:var(--accent)}
 
-  /* Top bar with small PMS link */
-  .topbar{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    padding:8px 24px;
-    background:var(--navy-dark);
-  }
-  .topbar a{
-    color:#cfe3f2;
-    font-size:0.78rem;
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-    padding:4px 10px;
-    border-radius:20px;
-    transition:background 0.2s, color 0.2s;
-  }
-  .topbar a:hover{
-    background:rgba(255,255,255,0.12);
-    color:#ffffff;
-  }
-  .topbar a svg{width:11px;height:11px}
-
   header{
     background:linear-gradient(135deg, var(--navy) 0%, #1a5a86 60%, var(--accent) 100%);
     color:white;
@@ -227,6 +202,25 @@
     color:var(--text-muted);
     text-decoration:underline;
   }
+  .footer-links{
+    margin-top:10px;
+  }
+  .footer-links a{
+    color:var(--text-muted);
+    font-size:0.78rem;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    padding:4px 10px;
+    border-radius:20px;
+    transition:background 0.2s, color 0.2s;
+  }
+  .footer-links a:hover{
+    background:var(--accent-light);
+    color:var(--navy);
+  }
+  .footer-links a svg{width:11px;height:11px}
 
   @media (max-width:600px){
     header h1{font-size:1.8rem}
@@ -237,13 +231,6 @@
 </style>
 </head>
 <body>
-
-<div class="topbar">
-  <a href="https://master.d2syuhnqcx2xgd.amplifyapp.com" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-    Product Management System
-  </a>
-</div>
 
 <header>
   <div class="nav">
@@ -353,6 +340,12 @@
 
 <footer>
   &copy; 2026 Rapid Business Systems. All rights reserved.
+  <div class="footer-links">
+    <a href="https://master.d2syuhnqcx2xgd.amplifyapp.com" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Product Management System
+    </a>
+  </div>
 </footer>
 
 </body>
