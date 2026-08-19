@@ -1,168 +1,359 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<div style="
-max-width:1000px;
-margin:0 auto:
-">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapid Systems — Engineering • Industrial Supply • Energy Development</title>
+<style>
+  :root{
+    --primary:#0078d4;
+    --primary-dark:#005a9e;
+    --text:#1f2a37;
+    --text-light:#5b6675;
+    --bg:#ffffff;
+    --bg-alt:#f5f8fb;
+    --border:#e3e8ee;
+    --radius:12px;
+    --shadow:0 4px 14px rgba(15,40,70,0.08);
+  }
 
-	<style>
-		body{font-family:"segoe UI" Arieal, sans-serif;}
-	</style>
+  *{box-sizing:border-box;}
 
-	<img src="RBS logo.png" width="400" height="100">
-<h2> Engineering • Industrial Supply • Energy Development </h2>
+  body{
+    margin:0;
+    font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+  }
 
-<!-- START NAV BUTTONS -->
-<section>
-	<div style="
-		display:flex;
-		justify-content:left;
-		gap:10px;
-		margin:0;
-">
- 
-	<a href="index.html" style="
-			background:#0078d4;
-			color:white;
-			text-decoration:none;
-			padding:12px 30px;
-			border-radius:8px;
-			font-weight:bold;
-		">HOME</a>
- 
-		<a href="Rapid BUSINESS Systems.html" style="
-			background:#0078d4;
-			color:white;
-			text-decoration:none;
-			padding:12px 30px;
-			border-radius:8px;
-			font-weight:bold;
-		">BUSINESS</a>
- 
-		<a href="Rapid ENERGY Systems.html" style="
-			background:#0078d4;
-			color:white;
-			text-decoration:none;
-			padding:12px 30px;
-			border-radius:8px;
-			font-weight:bold;
-		">ENERGY</a>
+  .wrapper{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px;
+  }
 
-	</div>
-</section>
-<!-- END NAV BUTTONS -->
+  /* ---------- Header ---------- */
+  header{
+    padding:28px 0 18px;
+    border-bottom:1px solid var(--border);
+  }
 
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
 
-<h1> About Us </h1>
-<section>
-	Rapid Systems is a multidisciplinary engineering and development company built on precision, reliability, and long-term value creation. We operate across two complementary verticals: </section> <br>
+  .brand img{
+    max-width:280px;
+    width:100%;
+    height:auto;
+    display:block;
+  }
 
-<ul>
+  .brand-text h1{
+    margin:0;
+    font-size:1rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--text-light);
+    font-weight:600;
+  }
 
-	<li><b>Rapid BUSINESS Systems (RBS) </b>— Industrial components, castings, machined parts, and supply-chain solutions</li>
-	<li> <b>Rapid ENERGY Systems (RES) </b> — Battery energy storage development and grid-integrated energy projects</li>
+  /* ---------- Nav ---------- */
+  nav{
+    margin-top:20px;
+  }
 
-</ul>
+  .nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
 
+  .nav-links a{
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    padding:12px 28px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:.03em;
+    transition:background .15s ease, transform .15s ease;
+    flex:0 1 auto;
+    text-align:center;
+  }
 
-<section>
+  .nav-links a:hover,
+  .nav-links a:focus{
+    background:var(--primary-dark);
+    transform:translateY(-1px);
+  }
 
-	Our foundation is simple: deliver high-quality engineered solutions that help businesses grow and help communities power the future. 
+  .nav-links a.active{
+    background:var(--primary-dark);
+  }
 
-</section>
+  /* ---------- Sections ---------- */
+  main{
+    padding:40px 0 10px;
+  }
 
-<p>
-<section>
-	<h3>🌟 Our Mission </h3>
-To provide dependable engineering, manufacturing, and energy development services that combine technical rigor with practical execution. We aim to support: <br>
+  section{
+    margin-bottom:48px;
+  }
 
-</p>
-<ul>
-	<li>U.S. manufacturers seeking reliable component sourcing</li>
-	<li>Utilities and developers building modern grid infrastructure</li>
-	<li>Communities benefiting from stable, clean energy assets</li>
+  h2{
+    font-size:1.7rem;
+    margin:0 0 16px;
+    color:var(--text);
+  }
 
-Our mission is to bridge industrial capability and energy innovation under one unified brand.
+  h3{
+    font-size:1.25rem;
+    margin:0 0 12px;
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
 
-</ul>
+  p{
+    margin:0 0 16px;
+    color:var(--text-light);
+  }
 
+  ul{
+    margin:0 0 16px;
+    padding-left:22px;
+    color:var(--text-light);
+  }
 
-</section>
+  ul li{
+    margin-bottom:8px;
+  }
 
-<p>
-<section>
-	<h3>🚀 Our Vision </h3>
-To become a trusted engineering partner across industries — from precision mechanical components to utility-scale battery storage — while expanding into a diversified portfolio of projects that strengthen supply chains and modernize the energy grid. 
+  ul li b{
+    color:var(--text);
+  }
 
-<br>
+  .lead{
+    font-size:1.05rem;
+  }
 
-We envision Rapid Systems as a long-term platform where:
+  /* ---------- Cards (mission / vision) ---------- */
+  .info-card{
+    background:var(--bg-alt);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:26px 28px;
+  }
 
-<ul>
-	<li>Industrial clients find reliable sourcing</li>
-	<li>Energy partners find credible development expertise</li>
-	<li>New technologies can be evaluated, adopted, and scaled</li>
-	<li>Multi-sector engineering solutions grow under one roof</li>
-</ul>
-</section>
+  /* ---------- Divisions grid ---------- */
+  .divisions-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:24px;
+    margin-top:20px;
+  }
 
-<p>
+  .division-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+    text-align:center;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
 
+  .division-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 24px rgba(15,40,70,0.12);
+  }
 
-<section>
-	<h3>🧭 Explore Our Divisions </h3>
-	Choose the branch of Rapid Systems you want to explore:
+  .division-card img{
+    width:100%;
+    max-width:220px;
+    height:180px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:14px;
+  }
 
-<div style="display:flex; gap:20px;">
+  .division-card h4{
+    margin:0 0 8px;
+    font-size:1.1rem;
+    color:var(--text);
+  }
 
-	<div style="
-		width: 300px;
-		height: 300px;
-		background: linear-gradient(to right, white, white);
-		padding:10px;
-		box-sizing:border-box;
-		text-align:center;
-">
-	<img src="RBS_Image1.jpg" width="200" height="200" 
-	<p>
-	<b><br>Business Division<br> </b>
-	Casting, Machined parts, industrial supply.
+  .division-card p{
+    margin:0;
+    font-size:.95rem;
+  }
+
+  /* ---------- Contact / footer ---------- */
+  .contact-card{
+    background:var(--primary);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:30px 32px;
+  }
+
+  .contact-card h3{
+    color:#fff;
+    margin-bottom:14px;
+  }
+
+  .contact-card a{
+    color:#fff;
+    text-decoration:underline;
+  }
+
+  .contact-lines p{
+    color:rgba(255,255,255,0.92);
+    margin:0 0 6px;
+  }
+
+  footer{
+    text-align:center;
+    padding:24px 0 36px;
+    color:var(--text-light);
+    font-size:.85rem;
+    border-top:1px solid var(--border);
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width:640px){
+    .wrapper{padding:0 16px;}
+
+    header{padding:20px 0 14px;}
+
+    .brand img{max-width:200px;}
+
+    .nav-links{
+      flex-direction:column;
+    }
+
+    .nav-links a{
+      padding:14px 20px;
+    }
+
+    h2{font-size:1.4rem;}
+
+    h3{font-size:1.1rem;}
+
+    .info-card, .contact-card{
+      padding:20px;
+    }
+
+    .divisions-grid{
+      grid-template-columns:1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header>
+    <div class="brand">
+      <img src="RBS logo.png" alt="Rapid Systems logo">
+      <div class="brand-text">
+        <h1>Engineering • Industrial Supply • Energy Development</h1>
+      </div>
+    </div>
+
+    <nav aria-label="Primary">
+      <div class="nav-links">
+        <a href="index.html" class="active">HOME</a>
+        <a href="Rapid BUSINESS Systems.html">BUSINESS</a>
+        <a href="Rapid ENERGY Systems.html">ENERGY</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>About Us</h2>
+      <p class="lead">Rapid Systems is a multidisciplinary engineering and development company built on precision, reliability, and long-term value creation. We operate across two complementary verticals:</p>
+      <ul>
+        <li><b>Rapid BUSINESS Systems (RBS)</b> — Industrial components, castings, machined parts, and supply-chain solutions</li>
+        <li><b>Rapid ENERGY Systems (RES)</b> — Battery energy storage development and grid-integrated energy projects</li>
+      </ul>
+      <p>Our foundation is simple: deliver high-quality engineered solutions that help businesses grow and help communities power the future.</p>
+    </section>
+
+    <section>
+      <div class="info-card">
+        <h3>🌟 Our Mission</h3>
+        <p>To provide dependable engineering, manufacturing, and energy development services that combine technical rigor with practical execution. We aim to support:</p>
+        <ul>
+          <li>U.S. manufacturers seeking reliable component sourcing</li>
+          <li>Utilities and developers building modern grid infrastructure</li>
+          <li>Communities benefiting from stable, clean energy assets</li>
+        </ul>
+        <p style="margin-bottom:0;">Our mission is to bridge industrial capability and energy innovation under one unified brand.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="info-card">
+        <h3>🚀 Our Vision</h3>
+        <p>To become a trusted engineering partner across industries — from precision mechanical components to utility-scale battery storage — while expanding into a diversified portfolio of projects that strengthen supply chains and modernize the energy grid.</p>
+        <p>We envision Rapid Systems as a long-term platform where:</p>
+        <ul style="margin-bottom:0;">
+          <li>Industrial clients find reliable sourcing</li>
+          <li>Energy partners find credible development expertise</li>
+          <li>New technologies can be evaluated, adopted, and scaled</li>
+          <li>Multi-sector engineering solutions grow under one roof</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h3>🧭 Explore Our Divisions</h3>
+      <p>Choose the branch of Rapid Systems you want to explore:</p>
+
+      <div class="divisions-grid">
+        <div class="division-card">
+          <img src="RBS_Image1.jpg" alt="Rapid Business Systems — industrial components and machined parts">
+          <h4>Business Division</h4>
+          <p>Casting, machined parts, industrial supply.</p>
+        </div>
+
+        <div class="division-card">
+          <img src="RBS_Image2.jpg" alt="Rapid Energy Systems — battery storage and energy solutions">
+          <h4>Energy Division</h4>
+          <p>Battery storage and energy solutions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="contact-card">
+        <h3>📞 Contact</h3>
+        <div class="contact-lines">
+          <p><b>Rapid Systems</b></p>
+          <p>Irvine, California</p>
+          <p>Email: <a href="mailto:info@rapid-systems.net">info@rapid-systems.net</a></p>
+          <p>Website: <a href="https://www.rapid-systems.net">www.rapid-systems.net</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Rapid Systems. All rights reserved.
+  </footer>
+
 </div>
-</p>
 
-<div style="
-	width: 300px;
-	height: 300px;
-	background: linear-gradient(to right, white, white);
-	padding:10px;
-	box-sizing:border-box;
-	text-align:center;
-">
-	<img src="RBS_Image2.jpg" width="200" height="200" 
-	<p>
-	<b><br>Energy Division <br> </b>
-	Battery storage and energy solutions.
-</p>
-
-</div>
-</div>
-
-</section>
-
-
-<br><br>
-
-
-<section>
-	📞 Contact <br>
-	Rapid Systems <br>
-	Irvine, California<br>
-	Email: info@rapid-systems.net<br>
-	Website: www.rapid-systems.net<br>
-</section>
-
-<br><br>
-
-© 2026 Rapid Systems. All rights reserved.
-</div>
+</body>
+</html>

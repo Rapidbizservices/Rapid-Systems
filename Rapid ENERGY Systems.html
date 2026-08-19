@@ -1,227 +1,451 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<div style="
-max-width:1000px;
-margin:0 auto:
-">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapid ENERGY Systems — Battery Storage &amp; Grid-Integrated Development</title>
+<style>
+  :root{
+    --primary:#0078d4;
+    --primary-dark:#005a9e;
+    --text:#1f2a37;
+    --text-light:#5b6675;
+    --bg:#ffffff;
+    --bg-alt:#f5f8fb;
+    --border:#e3e8ee;
+    --radius:12px;
+    --shadow:0 4px 14px rgba(15,40,70,0.08);
+  }
 
-	<style>
-		body{font-family:"segoe UI" Arieal, sans-serif;}
-	</style>
+  *{box-sizing:border-box;}
 
-	<img src="RES Logo.png">
-	<!-- <img src="RBS logo.png"> --> <br>
-<h2> Battery Energy Storage • Interconnection Strategy • Grid-Integrated Development </h2>
+  body{
+    margin:0;
+    font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+  }
 
-<!-- START NAV BUTTONS -->
-<section>
-	<div style="
-		display:flex;
-		justify-content:left;
-		gap:10px;
-		margin:0;
-">
- 
-	<a href="index.html" style="
-			background:#0078d4;
-			color:white;
-			text-decoration:none;
-			padding:12px 30px;
-			border-radius:8px;
-			font-weight:bold;
-		">HOME</a>
- 
-	</div>
-</section>
-<!-- END NAV BUTTONS -->
+  .wrapper{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px;
+  }
 
-</p>
+  /* ---------- Header ---------- */
+  header{
+    padding:28px 0 18px;
+    border-bottom:1px solid var(--border);
+  }
 
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
 
-	<img src="BESS_Image.png"  
-	width ="600" 
-	height="300" 
-	style="margin-	right:200px"> 
+  .brand img{
+    max-width:280px;
+    width:100%;
+    height:auto;
+    display:block;
+  }
 
-<br>
+  .brand-text h1{
+    margin:0;
+    font-size:1rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--text-light);
+    font-weight:600;
+  }
 
+  /* ---------- Nav ---------- */
+  nav{
+    margin-top:20px;
+  }
 
-<p>
-<section>
-	<h3> ⚡ Technical Overview </h3>
-Rapid Energy Systems (RES) develops utility-scale battery energy storage systems (BESS) with a focus on distribution-level interconnection, grid stability, and scalable multi-asset sites. Our development model emphasizes engineering rigor, interconnection feasibility, and land control in high-value grid pockets across California. </p>
+  .nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
 
-RES specializes in 5–20 MW standalone storage where distribution feeders, load pockets, and transmission adjacency create optimal conditions for fast deployment and long-term expansion. <br>
+  .nav-links a{
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    padding:12px 28px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:.03em;
+    transition:background .15s ease, transform .15s ease;
+    flex:0 1 auto;
+    text-align:center;
+  }
 
-</p>
+  .nav-links a:hover,
+  .nav-links a:focus{
+    background:var(--primary-dark);
+    transform:translateY(-1px);
+  }
 
+  .nav-links a.active{
+    background:var(--primary-dark);
+  }
 
+  /* ---------- Sections ---------- */
+  main{
+    padding:40px 0 10px;
+  }
 
-</section>
+  section{
+    margin-bottom:48px;
+  }
 
-<p>
-<section>
-	<h3>⚡ Active Development Zone: Imperial Irrigation District (IID) </h3>
-Calipatria BESS — 9.6 MW / 38 MWh (Under Development) </p>
-RES is advancing a mid-scale standalone BESS project near Calipatria, CA, strategically positioned within an IID agricultural load pocket and adjacent to transmission infrastructure. </p>
+  h2{
+    font-size:1.6rem;
+    margin:0 0 16px;
+    color:var(--text);
+  }
 
-	<img src="Tesla_Megapack.png"  
-	width ="600" 
-	height="300" 
-	style="margin-	right:200px"> 
-</section>
+  h3{
+    font-size:1.25rem;
+    margin:0 0 12px;
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
 
+  h4{
+    font-size:1.05rem;
+    margin:0 0 10px;
+    color:var(--text);
+  }
 
-<section>
-	<h3>🧭 Technical Highlights </h3>
+  p{
+    margin:0 0 16px;
+    color:var(--text-light);
+  }
 
-<ul>
-	<li>Project Size: 9.6 MW / ~38 MWh </li>
-	<li>Technology: Tesla Megapack 2 XL (or equivalent)</li>
-	<li>Interconnection Target: IID 12 kV distribution feeder</li>
-	<li>Land Position: 77-acre parcel under acquisition</li>
-	<li>Feeder Proximity: Estimated 0.5–1.0 miles</li>
-	<li>Interconnection Process: IID PAR submission planned during due-diligence</li>
-	<li>Expansion Path: Transmission-level BESS (10–20 MW) and optional solar buildout</li>
-<br>
-This site is engineered as a multi-project hub, enabling future grid assets beyond the initial BESS deployment.
-</ul>
-</section>
+  ul{
+    margin:0 0 16px;
+    padding-left:22px;
+    color:var(--text-light);
+  }
 
+  ul li{
+    margin-bottom:8px;
+  }
 
+  ul li b{
+    color:var(--text);
+  }
 
-<section>
-	<h3>⚡ Technical Capabilities </h3>
+  .lead{
+    font-size:1.05rem;
+  }
 
-	<h4>1. Interconnection Engineering</h4>
-<ul>
-	<li>Feeder headroom analysis</li>
-	<li>POI identification and optimization</li>
-	<li>Distribution vs. transmission cost modeling</li>
-	<li>Protection scheme review</li>
-	<li>Load pocket and stability assessment</li>
-	<li>PAR and full interconnection application preparation</li>
+  /* ---------- Cards ---------- */
+  .info-card{
+    background:var(--bg-alt);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:26px 28px;
+  }
 
-</ul>
+  .info-card ul,
+  .info-card p:last-child{
+    margin-bottom:0;
+  }
 
-</section>
+  .stat-line{
+    font-weight:600;
+    color:var(--text);
+    margin-bottom:16px;
+  }
 
-<section>
+  /* ---------- Feature image ---------- */
+  .feature-img{
+    width:100%;
+    max-width:600px;
+    height:auto;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    display:block;
+    margin:20px auto 0;
+  }
 
-	<h4>2. Site & Grid Modeling</h4>
-<ul>
-	<li>GIS-based feeder mapping</li>
-	<li>Transmission adjacency evaluation</li>
-	<li>Land suitability scoring</li>
-	<li>BESS siting constraints (setbacks, access, thermal spacing)</li>
-	<li>Multi-asset expansion modeling (solar + storage)</li>
+  /* ---------- Capability cards grid ---------- */
+  .capability-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:20px;
+  }
 
-</ul>
+  .capability-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
 
-</section>
+  .capability-card ul{
+    margin-bottom:0;
+  }
 
+  /* ---------- CTA button ---------- */
+  .cta-wrap{
+    text-align:center;
+    margin:8px 0 20px;
+  }
 
-<section>
+  .cta-button{
+    display:inline-block;
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    padding:14px 34px;
+    border-radius:8px;
+    font-weight:700;
+    letter-spacing:.03em;
+    transition:background .15s ease, transform .15s ease;
+  }
 
-	<h4>3. Project Execution</h4>
-<ul>
-	<li>OEM selection (Megapack 2 XL or equivalent)</li>
-	<li>EPC coordination</li>
-	<li>Civil + electrical layout design</li>
-	<li>Permitting workflow</li>
-	<li>Utility coordination</li>
-	<li>NTP readiness package</li>
+  .cta-button:hover,
+  .cta-button:focus{
+    background:var(--primary-dark);
+    transform:translateY(-1px);
+  }
 
-</ul>
+  /* ---------- Contact / footer ---------- */
+  .contact-card{
+    background:var(--primary);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:30px 32px;
+  }
 
-</section>
+  .contact-card h3{
+    color:#fff;
+    margin-bottom:14px;
+  }
 
-<br><br>
-	<img src="Grid_Image.png"  
-	width ="600" 
-	height="300" 
-	style="margin-	right:200px"> 
-<br><br>
+  .contact-card a{
+    color:#fff;
+    text-decoration:underline;
+  }
 
-<p>
-<section>
-	<h3>⚡ Development Philosophy </h3>
-RES focuses on mid-scale storage where:
-<ul>
-	<li>Interconnection is achievable</li>
-	<li>Distribution feeders have available headroom</li>
-	<li>Transmission proximity enables future scaling</li>
-	<li>Land cost is favorable</li>
-	<li>Grid need is clear (agricultural pumping, peak load pockets, renewable smoothing)</li>
+  .contact-lines p{
+    color:rgba(255,255,255,0.92);
+    margin:0 0 6px;
+  }
 
+  footer{
+    text-align:center;
+    padding:24px 0 36px;
+    color:var(--text-light);
+    font-size:.85rem;
+    border-top:1px solid var(--border);
+  }
 
-</ul>
-Our approach minimizes risk and maximizes long-term grid value.
-</section>
-<br><br>
+  /* ---------- Mobile ---------- */
+  @media (max-width:640px){
+    .wrapper{padding:0 16px;}
 
+    header{padding:20px 0 14px;}
 
-<section>
-	<h3>⚡ Technical Project Plan </h3>
-Explore engineering notes, site evaluations, and development workflows:
+    .brand img{max-width:200px;}
 
+    .nav-links{
+      flex-direction:column;
+    }
 
+    .nav-links a{
+      padding:14px 20px;
+    }
 
-<!-- START NAV BUTTONS -->
-<section>
-	<div style="
-		display:flex;
-		justify-content:left;
-		gap:10px;
-		margin:0;
-">
- 
-	<a href="9.6MW BESS Plan.pdf" style="
-			background:#0078d4;
-			color:white;
-			text-decoration:none;
-			padding:12px 30px;
-			border-radius:8px;
-			font-weight:bold;
-		">TECHNICAL PROJECT PLAN</a>
- 
-	</div>
-</section>
-<!-- END NAV BUTTONS -->
+    h2{font-size:1.3rem;}
 
+    h3{font-size:1.05rem;}
 
+    .info-card, .contact-card, .capability-card{
+      padding:20px;
+    }
 
+    .capability-grid{
+      grid-template-columns:1fr;
+    }
 
-Includes: 
-<ul>
-	<li>BESS sizing models</li>
-	<li>Interconnection strategy documents</li>
-	<li>Feeder proximity analysis</li>
-	<li>Land evaluation maps</li>
-	<li>Development checklists</li>
-	<li>Grid modeling notes</li>
+    .cta-button{
+      display:block;
+    }
+  }
+</style>
+</head>
+<body>
 
+<div class="wrapper">
 
-</ul>
-Our approach minimizes risk and maximizes long-term grid value.
-</section>
-<br><br>
+  <header>
+    <div class="brand">
+      <img src="RES Logo.png" alt="Rapid Energy Systems logo">
+      <div class="brand-text">
+        <h1>Battery Energy Storage • Interconnection Strategy • Grid-Integrated Development</h1>
+      </div>
+    </div>
 
+    <nav aria-label="Primary">
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="Rapid BUSINESS Systems.html">BUSINESS</a>
+        <a href="Rapid ENERGY Systems.html" class="active">ENERGY</a>
+      </div>
+    </nav>
+  </header>
 
+  <main>
 
+    <section>
+      <div class="info-card">
+        <h3>⚡ Technical Overview</h3>
+        <p>Rapid Energy Systems (RES) develops utility-scale battery energy storage systems (BESS) with a focus on distribution-level interconnection, grid stability, and scalable multi-asset sites. Our development model emphasizes engineering rigor, interconnection feasibility, and land control in high-value grid pockets across California.</p>
+        <p>RES specializes in 5–20 MW standalone storage where distribution feeders, load pockets, and transmission adjacency create optimal conditions for fast deployment and long-term expansion.</p>
+        <img class="feature-img" src="BESS_Image.png" alt="Utility-scale battery energy storage system">
+      </div>
+    </section>
 
+    <section>
+      <div class="info-card">
+        <h3>⚡ Active Development Zone: Imperial Irrigation District (IID)</h3>
+        <p class="stat-line">Calipatria BESS — 9.6 MW / 38 MWh (Under Development)</p>
+        <p>RES is advancing a mid-scale standalone BESS project near Calipatria, CA, strategically positioned within an IID agricultural load pocket and adjacent to transmission infrastructure.</p>
+        <img class="feature-img" src="Tesla_Megapack.png" alt="Tesla Megapack battery storage units">
+      </div>
+    </section>
 
+    <section>
+      <div class="info-card">
+        <h3>🧭 Technical Highlights</h3>
+        <ul>
+          <li>Project Size: 9.6 MW / ~38 MWh</li>
+          <li>Technology: Tesla Megapack 2 XL (or equivalent)</li>
+          <li>Interconnection Target: IID 12 kV distribution feeder</li>
+          <li>Land Position: 77-acre parcel under acquisition</li>
+          <li>Feeder Proximity: Estimated 0.5–1.0 miles</li>
+          <li>Interconnection Process: IID PAR submission planned during due-diligence</li>
+          <li>Expansion Path: Transmission-level BESS (10–20 MW) and optional solar buildout</li>
+        </ul>
+        <p style="margin-bottom:0;">This site is engineered as a multi-project hub, enabling future grid assets beyond the initial BESS deployment.</p>
+      </div>
+    </section>
 
-<section>
-	📞 Contact <br>
-	Rapid Systems <br>
-	Irvine, California<br>
-	Email: info@rapid-systems.net<br>
-	Website: www.rapid-systems.net<br>
-</section>
+    <section>
+      <h3>⚡ Technical Capabilities</h3>
+      <div class="capability-grid">
 
-<br><br>
+        <div class="capability-card">
+          <h4>1. Interconnection Engineering</h4>
+          <ul>
+            <li>Feeder headroom analysis</li>
+            <li>POI identification and optimization</li>
+            <li>Distribution vs. transmission cost modeling</li>
+            <li>Protection scheme review</li>
+            <li>Load pocket and stability assessment</li>
+            <li>PAR and full interconnection application preparation</li>
+          </ul>
+        </div>
 
-© 2026 Rapid Systems. All rights reserved.
+        <div class="capability-card">
+          <h4>2. Site &amp; Grid Modeling</h4>
+          <ul>
+            <li>GIS-based feeder mapping</li>
+            <li>Transmission adjacency evaluation</li>
+            <li>Land suitability scoring</li>
+            <li>BESS siting constraints (setbacks, access, thermal spacing)</li>
+            <li>Multi-asset expansion modeling (solar + storage)</li>
+          </ul>
+        </div>
+
+        <div class="capability-card">
+          <h4>3. Project Execution</h4>
+          <ul>
+            <li>OEM selection (Megapack 2 XL or equivalent)</li>
+            <li>EPC coordination</li>
+            <li>Civil + electrical layout design</li>
+            <li>Permitting workflow</li>
+            <li>Utility coordination</li>
+            <li>NTP readiness package</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <img class="feature-img" src="Grid_Image.png" alt="Grid infrastructure and transmission lines">
+    </section>
+
+    <section>
+      <div class="info-card">
+        <h3>⚡ Development Philosophy</h3>
+        <p>RES focuses on mid-scale storage where:</p>
+        <ul>
+          <li>Interconnection is achievable</li>
+          <li>Distribution feeders have available headroom</li>
+          <li>Transmission proximity enables future scaling</li>
+          <li>Land cost is favorable</li>
+          <li>Grid need is clear (agricultural pumping, peak load pockets, renewable smoothing)</li>
+        </ul>
+        <p style="margin-bottom:0;">Our approach minimizes risk and maximizes long-term grid value.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>⚡ Technical Project Plan</h3>
+      <p>Explore engineering notes, site evaluations, and development workflows:</p>
+
+      <div class="cta-wrap">
+        <a href="9.6MW BESS Plan.pdf" class="cta-button">TECHNICAL PROJECT PLAN</a>
+      </div>
+
+      <div class="info-card">
+        <p style="margin-bottom:8px;"><b>Includes:</b></p>
+        <ul style="margin-bottom:0;">
+          <li>BESS sizing models</li>
+          <li>Interconnection strategy documents</li>
+          <li>Feeder proximity analysis</li>
+          <li>Land evaluation maps</li>
+          <li>Development checklists</li>
+          <li>Grid modeling notes</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="contact-card">
+        <h3>📞 Contact</h3>
+        <div class="contact-lines">
+          <p><b>Rapid Systems</b></p>
+          <p>Irvine, California</p>
+          <p>Email: <a href="mailto:info@rapid-systems.net">info@rapid-systems.net</a></p>
+          <p>Website: <a href="https://www.rapid-systems.net">www.rapid-systems.net</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Rapid Systems. All rights reserved.
+  </footer>
+
 </div>
+
+</body>
+</html>
