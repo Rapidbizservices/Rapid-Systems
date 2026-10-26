@@ -2,366 +2,393 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rapid Systems — Engineering • Industrial Supply • Energy Development</title>
+<title>Rapid Global Business Systems | Precision Aircraft Interior Components</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Rapid Global Business Systems is an engineering and manufacturing company focused on precision aluminum components for aircraft interiors and aerospace applications. Design. Develop. Manufacture.">
 <style>
-  :root{
-    --primary:#0078d4;
-    --primary-dark:#005a9e;
-    --text:#1f2a37;
-    --text-light:#5b6675;
-    --bg:#ffffff;
-    --bg-alt:#f5f8fb;
-    --border:#e3e8ee;
-    --radius:12px;
-    --shadow:0 4px 14px rgba(15,40,70,0.08);
+  :root {
+    --bg: #ffffff;
+    --bg-2: #f5f7fb;
+    --border: #e3e8f2;
+    --border-2: #cdd6e8;
+    --text: #0f1630;
+    --text-2: #3b4562;
+    --muted: #5d667f;
+    --accent: #2b6fff;
+    --accent-dark: #1d5ce0;
+    --teal: #0a8da3;
+    --amber: #b86e00;
+    --amber-bg: #fff6e6;
+    --wrap: 1160px;
   }
-
-  *{box-sizing:border-box;}
-
-  body{
-    margin:0;
-    font-family:"Segoe UI", Arial, Helvetica, sans-serif;
-    color:var(--text);
-    background:var(--bg);
-    line-height:1.6;
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; line-height: 1.6;
   }
-
-  .wrapper{
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 20px;
-  }
-
-  /* ---------- Header ---------- */
-  header{
-    padding:28px 0 18px;
-    border-bottom:1px solid var(--border);
-  }
-
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    flex-wrap:wrap;
-  }
-
-  .brand img{
-    max-width:280px;
-    width:100%;
-    height:auto;
-    display:block;
-  }
-
-  .brand-text h1{
-    margin:0;
-    font-size:1rem;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    color:var(--text-light);
-    font-weight:600;
-  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 640px) { .wrap { padding: 0 22px; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 
   /* ---------- Nav ---------- */
-  nav{
-    margin-top:20px;
-  }
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand img { height: 38px; width: auto; }
+  .brand .word { line-height: 1.05; }
+  .brand .word b { display: block; font-size: 1.1rem; font-weight: 800; letter-spacing: .06em; color: var(--text); }
+  .brand .word span { display: block; font-size: .64rem; font-weight: 700; letter-spacing: .26em; color: var(--accent); margin-top: 3px; }
+  .nav ul { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+  .nav ul a { display: block; text-decoration: none; color: var(--text-2); font-size: .88rem; font-weight: 600; padding: 9px 13px; border-radius: 6px; transition: color .15s, background .15s; }
+  .nav ul a:hover { color: var(--accent); background: var(--bg-2); }
+  .nav ul a.cta { background: var(--accent); color: #fff; margin-left: 8px; padding: 10px 18px; }
+  .nav ul a.cta:hover { background: var(--accent-dark); color: #fff; }
+  @media (max-width: 920px) { .nav ul li:not(:last-child) { display: none; } }
 
-  .nav-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-  }
+  /* ---------- Buttons / labels ---------- */
+  .btn { display: inline-block; padding: 14px 26px; border-radius: 6px; font-weight: 700; font-size: .95rem; text-decoration: none; letter-spacing: .02em; transition: background .15s, border-color .15s, color .15s; }
+  .btn.primary { background: var(--accent); color: #fff; }
+  .btn.primary:hover { background: var(--accent-dark); }
+  .btn.ghost { border: 1px solid var(--border-2); color: var(--text); background: #fff; }
+  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .eyebrow { font-size: .76rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; }
 
-  .nav-links a{
-    background:var(--primary);
-    color:#fff;
-    text-decoration:none;
-    padding:12px 26px;
-    border-radius:8px;
-    font-weight:600;
-    font-size:.92rem;
-    letter-spacing:.03em;
-    transition:background .15s ease, transform .15s ease;
-    flex:0 1 auto;
-    text-align:center;
-  }
+  /* ---------- Hero ---------- */
+  .hero { background: var(--bg); border-bottom: 1px solid var(--border); }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; padding-top: 96px; padding-bottom: 96px; }
+  @media (max-width: 960px) { .hero .wrap { grid-template-columns: 1fr; gap: 36px; padding-top: 56px; padding-bottom: 56px; } }
+  .hero h1 { font-size: clamp(2.8rem, 6.4vw, 5rem); line-height: 1.0; margin: 0; font-weight: 800; letter-spacing: -.025em; }
+  .hero h1 span { display: block; }
+  .hero h1 .last { color: var(--accent); }
+  .hero .intro { font-size: 1.1rem; color: var(--text-2); margin: 0 0 16px; }
+  .mission { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; margin: 26px 0 32px; }
+  .mission small { display: block; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 4px; }
+  .mission p { margin: 0; color: var(--text); font-weight: 600; font-size: 1.04rem; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
-  .nav-links a:hover,
-  .nav-links a:focus{
-    background:var(--primary-dark);
-    transform:translateY(-1px);
-  }
-
-  .nav-links a.active{
-    background:var(--primary-dark);
-  }
+  /* ---------- Status strip ---------- */
+  .strip { background: var(--bg-2); border-bottom: 1px solid var(--border); }
+  .strip .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 40px; padding-top: 18px; padding-bottom: 18px; }
+  .strip .status { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .02em; }
+  .strip .dot { width: 10px; height: 10px; border-radius: 50%; background: #f0a020; box-shadow: 0 0 0 4px rgba(240,160,32,.2); flex: none; }
+  .strip .facts { display: flex; flex-wrap: wrap; gap: 8px 28px; color: var(--muted); font-size: .88rem; font-weight: 600; }
 
   /* ---------- Sections ---------- */
-  main{
-    padding:40px 0 10px;
-  }
+  section { padding: 92px 0; border-bottom: 1px solid var(--border); scroll-margin-top: 72px; }
+  section.alt { background: var(--bg-2); }
+  .head { max-width: 760px; margin-bottom: 44px; }
+  .head h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); line-height: 1.12; margin: 0 0 16px; letter-spacing: -.015em; font-weight: 800; }
+  .head p { margin: 0; color: var(--text-2); font-size: 1.06rem; }
+  h3 { font-size: 1.3rem; margin: 0 0 12px; letter-spacing: -.005em; line-height: 1.3; }
+  p { margin: 0 0 14px; }
+  .lede { color: var(--text-2); }
 
-  section{
-    margin-bottom:48px;
-  }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  @media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 36px; } }
 
-  h2{
-    font-size:1.7rem;
-    margin:0 0 16px;
-    color:var(--text);
-  }
+  .list-label { font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 24px 0 14px; }
+  ul.ticks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 11px 28px; }
+  ul.ticks.one { grid-template-columns: 1fr; }
+  @media (max-width: 560px) { ul.ticks { grid-template-columns: 1fr; } }
+  ul.ticks li { position: relative; padding-left: 26px; color: var(--text-2); font-size: .96rem; line-height: 1.45; }
+  ul.ticks li::before { content: ""; position: absolute; left: 1px; top: 5px; width: 12px; height: 6px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
 
-  h3{
-    font-size:1.25rem;
-    margin:0 0 12px;
-    color:var(--text);
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
+  .panel { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 34px 36px; box-shadow: 0 1px 2px rgba(15,22,48,.04); }
+  section.alt .panel { background: #fff; }
+  @media (max-width: 560px) { .panel { padding: 26px 22px; } }
+  .panel + .panel { margin-top: 20px; }
+  .panel .tag { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
 
-  p{
-    margin:0 0 16px;
-    color:var(--text-light);
-  }
+  /* cards */
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  @media (max-width: 1020px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: 10px; padding: 26px 24px; transition: box-shadow .15s, transform .15s; }
+  .card:hover { box-shadow: 0 10px 28px rgba(15,22,48,.08); transform: translateY(-2px); }
+  .card h3 { font-size: 1.08rem; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: .94rem; margin: 0; }
 
-  ul{
-    margin:0 0 16px;
-    padding-left:22px;
-    color:var(--text-light);
-  }
+  /* why */
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; }
+  .why > div { padding: 28px 26px; border-right: 1px solid var(--border); }
+  .why > div:last-child { border-right: 0; }
+  @media (max-width: 1000px) { .why > div { border-right: 0; border-bottom: 1px solid var(--border); } .why > div:last-child { border-bottom: 0; } }
+  .why h3 { font-size: 1.02rem; color: var(--accent); margin-bottom: 8px; }
+  .why p { margin: 0; color: var(--muted); font-size: .93rem; }
 
-  ul li{
-    margin-bottom:8px;
-  }
+  /* industries */
+  .inds { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+  .inds div { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; font-weight: 600; font-size: .98rem; display: flex; align-items: center; gap: 12px; }
+  .inds div::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); flex: none; }
 
-  ul li b{
-    color:var(--text);
-  }
+  /* quality status */
+  .status-panel { border-color: #f0c878; background: var(--amber-bg); }
+  .status-panel .tag { color: var(--amber); }
 
-  .lead{
-    font-size:1.05rem;
-  }
+  /* CTA */
+  .cta-band { padding: 104px 0; text-align: center; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #eef3ff 0%, #ffffff 100%); }
+  .cta-band h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); line-height: 1.12; margin: 0 auto 18px; max-width: 800px; letter-spacing: -.015em; font-weight: 800; }
+  .cta-band .body { max-width: 720px; margin: 0 auto 28px; color: var(--text-2); font-size: 1.06rem; }
+  .triple { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 22px; margin: 6px 0 12px; font-size: 1.5rem; font-weight: 800; letter-spacing: -.01em; }
+  .triple span:last-child { color: var(--accent); }
+  .sub-line { color: var(--muted); font-size: .98rem; margin: 0 0 30px; }
 
-  /* ---------- Cards (mission / vision) ---------- */
-  .info-card{
-    background:var(--bg-alt);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:26px 28px;
-  }
-
-  /* ---------- Divisions grid ---------- */
-  .divisions-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-    gap:24px;
-    margin-top:20px;
-  }
-
-  .division-card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:22px;
-    text-align:center;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-
-  .division-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 24px rgba(15,40,70,0.12);
-  }
-
-  .division-card img{
-    width:100%;
-    max-width:220px;
-    height:180px;
-    object-fit:cover;
-    border-radius:8px;
-    margin-bottom:14px;
-  }
-
-  .division-card h4{
-    margin:0 0 8px;
-    font-size:1.1rem;
-    color:var(--text);
-  }
-
-  .division-card p{
-    margin:0;
-    font-size:.95rem;
-  }
-
-  /* ---------- Contact / footer ---------- */
-  .contact-card{
-    background:var(--primary);
-    color:#fff;
-    border-radius:var(--radius);
-    padding:30px 32px;
-  }
-
-  .contact-card h3{
-    color:#fff;
-    margin-bottom:14px;
-  }
-
-  .contact-card a{
-    color:#fff;
-    text-decoration:underline;
-  }
-
-  .contact-lines p{
-    color:rgba(255,255,255,0.92);
-    margin:0 0 6px;
-  }
-
-  footer{
-    text-align:center;
-    padding:24px 0 36px;
-    color:var(--text-light);
-    font-size:.85rem;
-    border-top:1px solid var(--border);
-  }
-
-  /* ---------- Mobile ---------- */
-  @media (max-width:640px){
-    .wrapper{padding:0 16px;}
-
-    header{padding:20px 0 14px;}
-
-    .brand img{max-width:200px;}
-
-    .nav-links{
-      flex-direction:column;
-    }
-
-    .nav-links a{
-      padding:14px 20px;
-    }
-
-    h2{font-size:1.4rem;}
-
-    h3{font-size:1.1rem;}
-
-    .info-card, .contact-card{
-      padding:20px;
-    }
-
-    .divisions-grid{
-      grid-template-columns:1fr;
-    }
-  }
+  footer { padding: 44px 0; background: #fff; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between; }
+  footer .co b { display: block; letter-spacing: .06em; }
+  footer .co span { color: var(--muted); font-size: .9rem; }
+  footer .tagline { color: var(--muted); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+  footer .copy { width: 100%; color: #8a92aa; font-size: .8rem; border-top: 1px solid var(--border); padding-top: 22px; }
 </style>
 </head>
 <body>
 
-<div class="wrapper">
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Rapid Global Business Systems">
+      <img src="data:image/png;base64,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" alt="">
+      <span class="word"><b>RAPID GLOBAL</b><span>BUSINESS SYSTEMS</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#manufacturing">Manufacturing</a></li>
+        <li><a href="#expertise">Cabin Expertise</a></li>
+        <li><a href="#quality">Quality</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a class="cta" href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <header>
-    <div class="brand">
-      <img src="RBS logo.png" alt="Rapid Systems logo">
-      <div class="brand-text">
-        <h1>Engineering • Industrial Supply • Energy Development</h1>
+<!-- ============ HERO ============ -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Precision Aircraft Interior Components</p>
+      <h1><span>Design.</span><span>Develop.</span><span class="last">Manufacture.</span></h1>
+    </div>
+    <div>
+      <p class="intro">Rapid Global Business Systems is an engineering and manufacturing company focused on precision aluminum components for aircraft interiors and aerospace applications.</p>
+      <p class="intro">We partner with aerospace OEMs, cabin interior manufacturers, and aviation innovators to transform ideas into flight-ready products. From initial design through prototype development and production manufacturing, we deliver engineered solutions that meet the demanding requirements of the aerospace industry.</p>
+      <div class="mission">
+        <small>Our mission</small>
+        <p>Help customers bring aerospace products to market faster, with quality, reliability, and confidence.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn primary" href="#contact">Discuss Your Project</a>
+        <a class="btn ghost" href="#manufacturing">Typical Components</a>
       </div>
     </div>
-
-    <nav aria-label="Primary">
-      <div class="nav-links">
-        <a href="index.html" class="active">HOME</a>
-        <a href="Rapid ELECTRONICS SUPPLY Systems.html">ELECTRONICS SUPPLY</a>
-        <a href="Rapid BUSINESS Systems.html">INDUSTRIAL SUPPLY</a>
-        <a href="Rapid ENERGY Systems.html">ENERGY</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-
-    <section>
-      <h2>About Us</h2>
-      <p class="lead">Rapid Systems is a multidisciplinary engineering and development company built on precision, reliability, and long-term value creation. We operate across three complementary verticals:</p>
-      <ul>
-        <li><b>Rapid ELECTRONICS SUPPLY Systems (RESS)</b> — Sourcing of obsolete, end-of-life, and hard-to-find electronic components for OEMs and manufacturers</li>
-        <li><b>Rapid INDUSTRIAL SUPPLY Systems (RISS)</b> — Industrial components, castings, machined parts, and supply-chain solutions</li>
-        <li><b>Rapid ENERGY Systems (RES)</b> — Battery energy storage development and grid-integrated energy projects</li>
-      </ul>
-      <p>Our foundation is simple: deliver high-quality engineered solutions that help businesses grow and help communities power the future.</p>
-    </section>
-
-    <section>
-      <div class="info-card">
-        <h3>🌟 Our Mission</h3>
-        <p>To provide dependable engineering, manufacturing, and energy development services that combine technical rigor with practical execution. We aim to support:</p>
-        <ul>
-          <li>U.S. manufacturers seeking reliable component sourcing — electronic and mechanical</li>
-          <li>Utilities and developers building modern grid infrastructure</li>
-          <li>Communities benefiting from stable, clean energy assets</li>
-        </ul>
-        <p style="margin-bottom:0;">Our mission is to bridge industrial capability and energy innovation under one unified brand.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="info-card">
-        <h3>🚀 Our Vision</h3>
-        <p>To become a trusted engineering partner across industries — from precision mechanical components to utility-scale battery storage — while expanding into a diversified portfolio of projects that strengthen supply chains and modernize the energy grid.</p>
-        <p>We envision Rapid Systems as a long-term platform where:</p>
-        <ul style="margin-bottom:0;">
-          <li>Industrial clients find reliable sourcing of electronic and mechanical components</li>
-          <li>Energy partners find credible development expertise</li>
-          <li>New technologies can be evaluated, adopted, and scaled</li>
-          <li>Multi-sector engineering solutions grow under one roof</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h3>🧭 Explore Our Divisions</h3>
-      <p>Choose the branch of Rapid Systems you want to explore:</p>
-
-      <div class="divisions-grid">
-        <div class="division-card">
-          <img src="Electronics parts Image.png" alt="Electronic components sourced by Rapid Electronics Supply Systems">
-          <h4>Electronics Division</h4>
-          <p>Electronics parts supply.</p>
-        </div>
-
-        <div class="division-card">
-          <img src="RBS_Image1.jpg" alt="Industrial components and machined parts sourced by Rapid Industrial Supply Systems">
-          <h4>Industrial Supply Division</h4>
-          <p>Casting, machined parts, industrial supply.</p>
-        </div>
-
-        <div class="division-card">
-          <img src="RBS_Image2.jpg" alt="Rapid Energy Systems — battery storage and energy solutions">
-          <h4>Energy Division</h4>
-          <p>Battery storage and energy solutions.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="contact-card">
-        <h3>📞 Contact</h3>
-        <div class="contact-lines">
-          <p><b>Rapid Systems</b></p>
-          <p>Irvine, California</p>
-          <p>Email: <a href="mailto:info@rapid-systems.net">info@rapid-systems.net</a></p>
-          <p>Website: <a href="https://www.rapid-systems.net">www.rapid-systems.net</a></p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    &copy; 2026 Rapid Systems. All rights reserved.
-  </footer>
-
+  </div>
 </div>
+
+<div class="strip" role="region" aria-label="Quality status">
+  <div class="wrap">
+    <div class="status"><span class="dot" aria-hidden="true"></span>AS9100 Certification Currently in Process</div>
+    <div class="facts"><span>Irvine, California</span><span>U.S.-based program management</span><span>Prototype to full production</span></div>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ ENGINEERING ============ -->
+<section id="engineering">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Engineering solutions for aerospace</p>
+      <h2>More than a machine shop.</h2>
+      <p>Modern aerospace programs require more than a machine shop. They require a partner who understands product development, manufacturing, quality, and supply chain execution. Rapid Global Business Systems provides integrated support throughout the product lifecycle.</p>
+    </div>
+
+    <div class="split">
+      <div class="panel">
+        <span class="tag">Product Design &amp; Engineering</span>
+        <h3>Practical solutions, optimized for performance, manufacturability, and cost.</h3>
+        <p class="lede">Working closely with customer engineering teams, we help develop practical solutions optimized for performance, manufacturability, and cost.</p>
+        <p class="list-label">Our support includes</p>
+        <ul class="ticks one">
+          <li>Design review and optimization</li>
+          <li>CAD collaboration</li>
+          <li>Design for Manufacturability (DFM)</li>
+          <li>Material selection guidance</li>
+          <li>Prototype planning</li>
+          <li>Manufacturing process development</li>
+          <li>Production readiness support</li>
+        </ul>
+      </div>
+      <div class="panel" style="margin-top:0">
+        <span class="tag">Prototype Development &middot; From concept to production</span>
+        <h3>Every successful aerospace product starts with a well-executed prototype.</h3>
+        <p class="lede">Our development process helps identify manufacturing challenges early, reducing risk and accelerating production readiness.</p>
+        <p class="list-label">We support</p>
+        <ul class="ticks one">
+          <li>Concept models</li>
+          <li>Functional prototypes</li>
+          <li>Engineering development units</li>
+          <li>First article builds</li>
+          <li>Design verification components</li>
+          <li>Pre-production manufacturing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANUFACTURING ============ -->
+<section id="manufacturing" class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="head" style="margin-bottom:28px">
+          <p class="eyebrow">Precision Manufacturing</p>
+          <h2>Aluminum components for aircraft interior systems and aerospace equipment.</h2>
+          <p>We manufacture high-quality aluminum components used in aircraft interior systems and aerospace equipment. From prototype quantities to recurring production programs, we provide scalable manufacturing solutions tailored to customer requirements.</p>
+        </div>
+        <p class="list-label" style="margin-top:0">Capabilities include</p>
+        <ul class="ticks">
+          <li>CNC machining</li>
+          <li>Sheet metal fabrication</li>
+          <li>Mechanical assembly</li>
+          <li>Surface finishing</li>
+          <li>Quality inspection</li>
+          <li>Production supply management</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="tag">Typical components</span>
+        <ul class="ticks one">
+          <li>Aircraft seat structures</li>
+          <li>Armrests and seat mechanisms</li>
+          <li>Tray table assemblies</li>
+          <li>Seat track fittings</li>
+          <li>Interior mounting brackets</li>
+          <li>Cabin hardware</li>
+          <li>Overhead storage system components</li>
+          <li>Electronic equipment housings</li>
+          <li>Galley hardware</li>
+          <li>Lightweight structural assemblies</li>
+          <li>Custom aluminum machined parts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERTISE ============ -->
+<section id="expertise">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Aircraft interior expertise</p>
+      <h2>Built for the modern cabin.</h2>
+      <p>Aircraft interior components must balance strength, weight, durability, appearance, and reliability. Rapid Global Business Systems supports products used throughout the passenger cabin environment.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><h3>Seating Systems</h3><p>Precision-machined components and assemblies for commercial and business aviation seating platforms.</p></div>
+      <div class="card"><h3>Cabin Structures</h3><p>Custom aluminum components supporting interior panels, monuments, mounting systems, and cabin infrastructure.</p></div>
+      <div class="card"><h3>Galleys &amp; Storage Systems</h3><p>Structural and decorative components used in aircraft galley and storage applications.</p></div>
+      <div class="card"><h3>Electronics Integration</h3><p>Enclosures, mounting brackets, and support structures for in-flight entertainment, connectivity, lighting, and cabin management systems.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUALITY ============ -->
+<section id="quality" class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="head" style="margin-bottom:0">
+        <p class="eyebrow">Quality commitment</p>
+        <h2>Aerospace quality begins with process discipline.</h2>
+        <p>Quality is not inspected into a product. It is built into every step of development and manufacturing.</p>
+        <p style="margin-top:14px">Rapid Global Business Systems is currently implementing an aerospace quality management system aligned with AS9100 requirements.</p>
+        <p style="margin-top:14px">As we continue expanding our aerospace capabilities, we remain committed to meeting the expectations of aerospace OEMs and Tier-1 suppliers.</p>
+      </div>
+      <div>
+        <div class="panel status-panel">
+          <span class="tag">Quality status</span>
+          <h3 style="margin:0">AS9100 Certification Currently in Process</h3>
+        </div>
+        <div class="panel">
+          <span class="tag">Our quality framework includes</span>
+          <ul class="ticks one">
+            <li>Controlled manufacturing processes</li>
+            <li>Material traceability</li>
+            <li>Supplier quality management</li>
+            <li>Inspection and verification procedures</li>
+            <li>Document control</li>
+            <li>Continuous improvement initiatives</li>
+            <li>Customer-focused quality objectives</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Why Rapid Global Business Systems</p>
+      <h2>A partner for the whole program.</h2>
+    </div>
+    <div class="why">
+      <div><h3>Aerospace-Focused</h3><p>Dedicated to supporting aircraft interior and aerospace programs.</p></div>
+      <div><h3>Engineering-Led Approach</h3><p>Strong technical involvement throughout design, development, and manufacturing.</p></div>
+      <div><h3>U.S.-Based Program Management</h3><p>Responsive communication and project oversight from our California-based team.</p></div>
+      <div><h3>Scalable Manufacturing</h3><p>Support for prototypes, low-rate initial production, and full production programs.</p></div>
+      <div><h3>Reliable Execution</h3><p>A disciplined approach to quality, schedule, and customer satisfaction.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section id="industries" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Industries served</p>
+      <h2>Aviation and aerospace, from cabin to platform.</h2>
+    </div>
+    <div class="inds">
+      <div>Commercial Aviation</div>
+      <div>Business Aviation</div>
+      <div>Aircraft Interior Systems</div>
+      <div>Aerospace Equipment Manufacturers</div>
+      <div>Defense Aerospace</div>
+      <div>Advanced Air Mobility (AAM)</div>
+      <div>Unmanned Aircraft Systems (UAS)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="cta-band" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Your next aerospace program starts here</p>
+    <h2>From concept to production.</h2>
+    <p class="body">Whether you are developing a new aircraft interior component, replacing an existing part, or launching a next-generation aerospace product, Rapid Global Business Systems can help move your program from concept to production.</p>
+    <div class="triple"><span>Design.</span><span>Develop.</span><span>Manufacture.</span></div>
+    <p class="sub-line">Precision Aluminum Components for Aircraft Interiors &amp; Aerospace Applications</p>
+    <a class="btn primary" href="mailto:info@rapid-systems.net?subject=Aerospace%20project%20inquiry">Contact Us Today to Discuss Your Project</a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="co"><b>Rapid Global Business Systems</b><span>Irvine, California</span></div>
+    <div class="tagline">Engineering Excellence. Manufacturing Precision. Aerospace Focus.</div>
+    <div class="copy">&copy; 2026 Rapid Global Business Systems. All rights reserved.</div>
+  </div>
+</footer>
 
 </body>
 </html>
